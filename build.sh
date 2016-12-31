@@ -2,6 +2,14 @@
 
 pushd "${0%/*}" &>/dev/null
 
+OSXCROSS_SDK_VERSION=10.8
+UNATTENDED=1
+
+curl -L \
+  -z ./tarballs/MacOSX${OSXCROSS_SDK_VERSION}.sdk.tar.xz \
+  -o ./tarballs/MacOSX${OSXCROSS_SDK_VERSION}.sdk.tar.xz \
+  https://s3.amazonaws.com/andrew-osx-sdks/MacOSX${OSXCROSS_SDK_VERSION}.sdk.tar.xz
+
 source tools/tools.sh
 
 # find sdk version to use
